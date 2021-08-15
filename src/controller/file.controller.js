@@ -1,7 +1,7 @@
 const uploadFile = require("../middleware/upload");
 const fs = require('fs');
 
-const download = (req, res) => {
+const home = (req, res) => {
 
   res.status(200).send({
     message: `Hello World`,
@@ -67,4 +67,5 @@ module.exports = {
   upload,
   getListFiles,
   download,
+  home
 };
