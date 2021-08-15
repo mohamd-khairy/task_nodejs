@@ -15,7 +15,4 @@ const initRoutes = require("./src/routes");
 app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
 
-let port = process.env.port || 3000;
-app.listen(port, () => {
-  console.log(`Running at localhost:${port}`);
-});
+app.listen(process.env.port || 3000);
