@@ -11,6 +11,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.static(__dirname + '/resources/static/assets/uploads/'));
 
 const initRoutes = require("./src/routes");
 
@@ -18,4 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
 
 app.listen(port);
+
+
 

@@ -1,5 +1,6 @@
 const uploadFile = require("../middleware/upload");
 const fs = require('fs');
+const path = require('path');
 
 const home = (req, res) => {
 
@@ -28,7 +29,8 @@ const upload = async (req, res) => {
 };
 
 const getListFiles = (req, res) => {
-  const directoryPath = __basedir + "/resources/static/assets/uploads/";
+  const directoryPath = __basedir + "/resources/static/assets/uploads/"
+
 
   fs.readdir(directoryPath, function (err, files) {
     if (err) {
@@ -42,7 +44,7 @@ const getListFiles = (req, res) => {
     files.forEach((file) => {
       fileInfos.push({
         name: file,
-        url: directoryPath + file,
+        url: path.join(__basedir, '/resources/static/assets/uploads', file)//directoryPath + file,
       });
     });
 
