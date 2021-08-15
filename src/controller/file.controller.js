@@ -1,5 +1,14 @@
 const uploadFile = require("../middleware/upload");
 const fs = require('fs');
+
+const download = (req, res) => {
+
+  res.status(200).send({
+    message: `Hello World`,
+  });
+
+};
+
 const upload = async (req, res) => {
   try {
     await uploadFile(req, res);
