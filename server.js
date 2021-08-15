@@ -15,4 +15,4 @@ const initRoutes = require("./src/routes");
 app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.PORT || 5000);
