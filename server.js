@@ -11,7 +11,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(express.static(__dirname + '/resources/static/assets/uploads/'));
+app.use(express.static(__dirname + '/app/resources/static/assets/uploads/'));
 
 const initRoutes = require("./src/routes");
 
