@@ -15,10 +15,6 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, 'public')))
 
-const initRoutes = require("./src/routes");
-
-app.use(express.urlencoded({ extended: true }));
-initRoutes(app);
 
 const router = express.Router();
 
@@ -47,6 +43,12 @@ router.get("/files", function (request, response) {
   });
 
 });
+
+const initRoutes = require("./src/routes");
+app.use(express.urlencoded({ extended: true }));
+initRoutes(app);
+
+
 
 app.listen(port);
 
