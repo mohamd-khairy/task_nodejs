@@ -29,7 +29,7 @@ const upload = async (req, res) => {
 };
 
 const getListFiles = (req, res) => {
-  const directoryPath = __basedir + "/resources/static/assets/uploads/"
+  const directoryPath = __basedir + "/public/"
 
 
   fs.readdir(directoryPath, function (err, files) {
@@ -44,7 +44,7 @@ const getListFiles = (req, res) => {
     files.forEach((file) => {
       fileInfos.push({
         name: file,
-        url: path.join(__basedir, '/app/resources/static/assets/uploads', file)//directoryPath + file,
+        url: path.join(__basedir, '/public', file)//directoryPath + file,
       });
     });
 
@@ -54,7 +54,7 @@ const getListFiles = (req, res) => {
 
 const download = (req, res) => {
   const fileName = req.params.name;
-  const directoryPath = __basedir + "/app/resources/static/assets/uploads/";
+  const directoryPath = __basedir + "/public/";
 
   res.download(directoryPath + fileName, fileName, (err) => {
     if (err) {
