@@ -44,7 +44,7 @@ const getListFiles = (req, res) => {
     files.forEach((file) => {
       fileInfos.push({
         name: file,
-        url: path.join(__dirname, '/public', file)//directoryPath + file,  path.join(__dirname, '/public', file)
+        url: path.join(__dirname, '../../public', file)//directoryPath + file,  path.join(__dirname, '/public', file)
       });
     });
 
